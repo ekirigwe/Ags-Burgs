@@ -6,6 +6,7 @@ import Layout from "../src/components/Layout/Layout";
 import BurgerBuilder from "./container/BurgerBuilder/BurgerBuilder";
 import Logout from "./container/Auth/Logout/Logout";
 import * as actions from "../src/store/actions/index";
+import Spinner from "../src/components/UI/Spinner/Spinner";
 
 const Orders = React.lazy(() => import("./container/Orders/Orders"));
 const Auth = React.lazy(() => import("../src/container/Auth/Auth"));
@@ -32,7 +33,7 @@ class App extends Component {
           <Route
             path="/orders"
             render={() => (
-              <Suspense fallback={<div>loading...</div>}>
+              <Suspense fallback={<Spinner />}>
                 <Orders />
               </Suspense>
             )}
@@ -40,7 +41,7 @@ class App extends Component {
           <Route
             path="/checkout"
             render={() => (
-              <Suspense fallback={<div>loading...</div>}>
+              <Suspense fallback={<Spinner />}>
                 <Checkout />
               </Suspense>
             )}
@@ -48,7 +49,7 @@ class App extends Component {
           <Route
             path="/auth"
             render={() => (
-              <Suspense fallback={<div>loading...</div>}>
+              <Suspense fallback={<Spinner />}>
                 <Auth />
               </Suspense>
             )}
