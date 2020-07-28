@@ -68,7 +68,7 @@ export class BurgerBuilder extends Component {
     if (this.props.ings) {
       burger = (
         <Aux>
-          (<Burger ingredients={this.props.ings} />
+          <Burger ingredients={this.props.ings} />
           <BuildControls
             ingredientAdded={this.props.onIngredientAdded}
             ingredientRemoved={this.props.onIngredientRemoved}
@@ -78,7 +78,6 @@ export class BurgerBuilder extends Component {
             isAuth={this.props.isAuth}
             price={this.props.price}
           />
-          )
         </Aux>
       );
 
